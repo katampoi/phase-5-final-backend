@@ -1,4 +1,5 @@
-skip_before_action :authorized, only: [:create]
+class UsersController < ApplicationController
+  skip_before_action :authorize, only: [:create]
   
     def show_me
       render json: { user: UserSerializer.new(current_user) }, status: :accepted
@@ -23,5 +24,6 @@ skip_before_action :authorized, only: [:create]
     private
   
     def user_params
-      params.require(:user).permit(:email, :username, :firstName :password, :password_confirmation, :user_type)
+      params.require(:user).permit(:email, :username, :firstName, :password, :password_confirmation, :user_type)
     end
+end
