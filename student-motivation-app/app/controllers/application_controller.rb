@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     before_action :authorize
   
     def encode_token(payload)
@@ -36,5 +37,10 @@ class ApplicationController < ActionController::API
   
     def authorize
       render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
+    end
+    private
+
+    def render_not_found_response
+      render json: { errors: "Item not found" }, status: :not_found
     end
   end
