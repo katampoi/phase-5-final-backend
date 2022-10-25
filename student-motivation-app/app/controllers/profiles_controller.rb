@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
     def create
-        user = User.find(session[:user_id])
+        user = current_user
         profile = user.profile.create!(profile_params)
         render json: profile, status: :created
     end
@@ -11,9 +11,9 @@ class ProfilesController < ApplicationController
     end
 
     def update
-       profile = Profile.find(params[:id])
-       profile.update!(profile_params)
-       render json: profile, status: 200
+    #    profile = Profile.find(params[:id])
+        profile = current_user.profile.update!(profile_params)
+        render json: profile, status: 200
     end
 
     private
