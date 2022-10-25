@@ -12,7 +12,8 @@ class UsersController < ApplicationController
       end
   
       def show
-        render json: @user
+        # render json: @user
+        render json: User.find_by(id: session[:user_id])
       end
   
       def update
