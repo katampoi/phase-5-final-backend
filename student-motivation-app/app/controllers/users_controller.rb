@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     def show_me
       render json: { user: UserSerializer.new(current_user) }, status: :accepted
     end
+
+    def show
+      user = User.find_by!(id: params[:id])
+      render json:  user, status: 200
+    end
   
     def create
       @user = User.create(user_params)
