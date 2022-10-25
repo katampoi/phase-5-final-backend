@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    enum user_type:{student:0, staff:1, admin:2}
     has_one :wishlist
     has_one :profile
     has_many :subscriptions
