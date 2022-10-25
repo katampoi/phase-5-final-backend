@@ -4,4 +4,5 @@ class User < ApplicationRecord
     has_many :subscriptions
     has_many :reviews
     has_many :posts, through: :reviews
+    has_secure_password
 end
