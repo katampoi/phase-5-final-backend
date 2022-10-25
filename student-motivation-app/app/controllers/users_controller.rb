@@ -1,40 +1,27 @@
-class UsersController < ApplicationController
-
-    def index
-        render json: User.all, status: 200
-      end
-    
-      def create
-        user = User.create!(user_params)
-        session[:user_id] = user.id
-        session[:user_type] = user.user_type
-        render json: user, status: :created
-      end
+skip_before_action :authorized, only: [:create]
   
-      def show
-        # render json: @user
-        render json: User.find_by(id: session[:user_id])
-      end
+    def show_me
+      render json: { user: UserSerializer.new(current_user) }, status: :accepted
+    end
   
-      def update
-        user = User.find(params[:id])
-        user.update!(update_user_params)
-        render json: user, status: :updated
+    def create
+      @user = User.create(user_params)
+      if @user.valid?
+        @token = encode_token({ user_id: @user.id })
+        render json: { user: UserSerializer.new(@user), jwt: @token }, status: :created
+      else
+        render json: { error: 'failed to create user' }, status: :unprocessable_entity
       end
-    
-      def destroy
-        user = User.find(params[:id])
-        user.destroy
-        head :no_content
-      end
-    
-      private
-    
-      def user_params
-        params.permit(:email, :username, :password, :password_confirmation, :user_type)
-      end
+    end
 
-      def update_user_params
-        params.permit(:username, :password, :password_confirmation)
-      end
-end
+    def destroy
+      @user = User.find(params[:id])
+      @user.destroy
+      head :no_content
+    end
+  
+    private
+  
+    def user_params
+      params.require(:user).permit(:email, :username, :firstName :password, :password_confirmation, :user_type)
+    end
