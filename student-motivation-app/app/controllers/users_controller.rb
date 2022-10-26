@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :authorize, only: [:create]
+  before_action :authorize_admin, only: [:create, :destroy]
   
     def show_me
       render json: { user: UserSerializer.new(current_user) }, status: :accepted
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
   
     def create
       @user = User.create!(user_params)
-      if @user.valid?
+       if @user.valid?
         @token = encode_token({ user_id: @user.id })
         render json: { user: UserSerializer.new(@user), jwt: @token }, status: :created
       # else
