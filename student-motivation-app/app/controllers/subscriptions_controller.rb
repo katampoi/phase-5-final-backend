@@ -17,8 +17,7 @@ class SubscriptionsController < ApplicationController
 
     # POST: /subscriptions
     def create
-        Subscription = Subscription.create!(subscription_params)
-        render json: subscription, status: :created
+        
     end
     
     # PATCH: /subscription/:id

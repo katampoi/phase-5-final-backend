@@ -18,8 +18,7 @@ end
 
 # POST: /wishlist
 def create
-    wishlist = Wishlist.create!(wishlist_params)
-    render json: wishlist, status: :created
+    
 end
 
 # PATCH: /wishlist/:id
