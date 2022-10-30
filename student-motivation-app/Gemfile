@@ -9,8 +9,10 @@ gem "rails", "~> 7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# # Use sqlite3 as the database for Active Record
+# gem "sqlite3", "~> 1.4"
+# use postgresql as the database for active record
+gem "postgresql"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -48,12 +50,10 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-<<<<<<< HEAD
-=======
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
 
->>>>>>> 0c34610e29c0b6a2644f2a65db2c1fcf7b8ad404
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -70,15 +70,14 @@ group :development do
   # gem "spring"
 end
 
-<<<<<<< HEAD
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-=======
+
 gem "jwt", "~> 2.5"
 
 gem "faker", "~> 2.23"
->>>>>>> 0c34610e29c0b6a2644f2a65db2c1fcf7b8ad404
+
