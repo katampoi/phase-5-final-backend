@@ -9,13 +9,16 @@ gem "rails", "~> 7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# # Use sqlite3 as the database for Active Record
-# gem "sqlite3", "~> 1.4"
-# use postgresql as the database for active record
-gem "postgresql"
+# Use sqlite3 as the database for Active Record
+gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
+
+# active model serializer gem
+gem 'active_model_serializers', '~> 0.10.13'
+# Avctive record adopter
+gem 'pg', "~> 1.1"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -36,7 +39,7 @@ gem "jbuilder"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-gem "bcrypt", "~> 3.1.7"
+# gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -50,18 +53,6 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-<<<<<<< HEAD
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem "rack-cors"
-
-=======
-<<<<<<< HEAD
-=======
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem "rack-cors"
-
->>>>>>> 0c34610e29c0b6a2644f2a65db2c1fcf7b8ad404
->>>>>>> 2b4bfd6d20c6ac0e8513d0fa2354ed938578f83d
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -78,21 +69,9 @@ group :development do
   # gem "spring"
 end
 
-<<<<<<< HEAD
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-<<<<<<< HEAD
-gem "jwt", "~> 2.5"
-
-gem "faker", "~> 2.23"
-=======
-=======
-gem "jwt", "~> 2.5"
-
-gem "faker", "~> 2.23"
->>>>>>> 0c34610e29c0b6a2644f2a65db2c1fcf7b8ad404
->>>>>>> 2b4bfd6d20c6ac0e8513d0fa2354ed938578f83d
