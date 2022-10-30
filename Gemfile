@@ -14,6 +14,7 @@ gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
+
 # active model serializer gem
 gem 'active_model_serializers', '~> 0.10.13'
 # Avctive record adopter
