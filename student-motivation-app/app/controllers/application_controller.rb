@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-class ApplicationController < ActionController::Base
-end
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 2b4bfd6d20c6ac0e8513d0fa2354ed938578f83d
 class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
@@ -57,7 +50,4 @@ class ApplicationController < ActionController::API
       render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
     end
   end
-<<<<<<< HEAD
-=======
->>>>>>> 0c34610e29c0b6a2644f2a65db2c1fcf7b8ad404
->>>>>>> 2b4bfd6d20c6ac0e8513d0fa2354ed938578f83d
+

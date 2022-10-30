@@ -50,18 +50,10 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-<<<<<<< HEAD
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
 
-=======
-<<<<<<< HEAD
-=======
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem "rack-cors"
-
->>>>>>> 0c34610e29c0b6a2644f2a65db2c1fcf7b8ad404
->>>>>>> 2b4bfd6d20c6ac0e8513d0fa2354ed938578f83d
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -78,21 +70,14 @@ group :development do
   # gem "spring"
 end
 
-<<<<<<< HEAD
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-<<<<<<< HEAD
+
 gem "jwt", "~> 2.5"
 
 gem "faker", "~> 2.23"
-=======
-=======
-gem "jwt", "~> 2.5"
 
-gem "faker", "~> 2.23"
->>>>>>> 0c34610e29c0b6a2644f2a65db2c1fcf7b8ad404
->>>>>>> 2b4bfd6d20c6ac0e8513d0fa2354ed938578f83d

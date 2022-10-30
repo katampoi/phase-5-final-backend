@@ -66,14 +66,10 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-<<<<<<< HEAD
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     bcrypt (3.1.18)
     bindex (0.8.1)
-=======
-    bcrypt (3.1.18)
->>>>>>> 2b4bfd6d20c6ac0e8513d0fa2354ed938578f83d
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -105,13 +101,9 @@ GEM
     io-console (0.5.11)
     irb (1.4.2)
       reline (>= 0.3.0)
-<<<<<<< HEAD
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-=======
-    jsonapi-renderer (0.2.2)
->>>>>>> 2b4bfd6d20c6ac0e8513d0fa2354ed938578f83d
     jwt (2.5.0)
     loofah (2.19.0)
       crass (~> 1.0.2)
@@ -193,8 +185,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.5.3)
-      mini_portile2 (~> 2.8.0)
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -226,30 +216,20 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
-=======
-  active_model_serializers
->>>>>>> 2b4bfd6d20c6ac0e8513d0fa2354ed938578f83d
   bcrypt (~> 3.1.7)
   bootsnap
   capybara
   debug
   faker (~> 2.23)
-<<<<<<< HEAD
   importmap-rails
   jbuilder
   jwt (~> 2.5)
   postgresql
-=======
-  jwt (~> 2.5)
-  pg (~> 1.1)
->>>>>>> 2b4bfd6d20c6ac0e8513d0fa2354ed938578f83d
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4)
   selenium-webdriver
   sprockets-rails
-  sqlite3 (~> 1.4)
   stimulus-rails
   turbo-rails
   tzinfo-data
