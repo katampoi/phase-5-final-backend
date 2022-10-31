@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :posttests
   resources :users
   resources :wishlists
   resources :subscriptions
