@@ -7,5 +7,6 @@ class User < ApplicationRecord
     has_many :posts, through: :reviews
     has_secure_password
 
-    validates :username, uniqueness: true
+    validates :username, :email, uniqueness: true
+    validates :password, length:{minimum:8}
 end
