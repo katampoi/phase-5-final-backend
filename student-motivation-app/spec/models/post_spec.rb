@@ -4,7 +4,7 @@ RSpec.describe Post, type: :model do
   let!(:post) do 
     Post.create(
       title: "Easiest way to learn on Javascript!",
-      media: "https://www.youtube.com/watch?v=NOiT7mZjPXw",
+      media_vid: "https://www.youtube.com/watch?v=NOiT7mZjPXw",
       content:"Introduction to javascript is made easier. Learn this language in less than an hour!",
       user_id:3,
       category_id:3
@@ -25,7 +25,7 @@ RSpec.describe Post, type: :model do
   
   describe '#media' do
     it 'returns the post\'s media' do
-      expect(post.media).to eq('https://www.youtube.com/watch?v=NOiT7mZjPXw')
+      expect(post.media_vid).to eq('https://www.youtube.com/watch?v=NOiT7mZjPXw')
     end
   end
 

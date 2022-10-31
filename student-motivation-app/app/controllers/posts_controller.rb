@@ -2,7 +2,7 @@ class PostsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     
-    #GET: /posts
+    # GET: /posts
     def index
         posts = Post.all
         render json: posts, status: :ok
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
 
     private
     def post_params
-        params.permit(:user_id, :category_id, :title, :media, :content)
+        params.permit(:user_id, :category_id, :title, :media_img, :media_vid, :content)
     end
 
     def render_not_found_response
