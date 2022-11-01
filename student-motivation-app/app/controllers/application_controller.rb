@@ -2,11 +2,11 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
-    # before_action :authorize
+    before_action :authorize
   
     def encode_token(payload)
       # should store secret in env variable
-      JWT.encode(payload, 'ni kubaad')
+      JWT.encode(payload, ENV["SECRET"])
     end
   
     def auth_header
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::API
         token = auth_header.split(' ')[1]
         # header: { 'Authorization': 'Bearer <token>' }
         begin
-          JWT.decode(token, 'ni kubaad', true, algorithm: 'HS256')
+          JWT.decode(token, ENV["SECRET"], true, algorithm: 'HS256')
         rescue JWT::DecodeError
           nil
         end
