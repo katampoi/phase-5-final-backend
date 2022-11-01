@@ -1,18 +1,24 @@
 puts "seed data..."
 
-# users
-15.times do
-    User.create(
-    username:Faker::Internet.username,
-    email:Faker::Internet.email,
-    user_type:['admin','staff','student'].sample,
-    password_digest:Faker::Internet.password,
-    first_name:Faker::Name.first_name ,
-    last_name: Faker::Name.last_name 
+#  User.create(
+#     username:Faker::Internet.username,
+#     email:Faker::Internet.email,
+#     user_type:['admin','staff','student'].sample,
+#     password_digest:Faker::Internet.password,
+#     first_name:Faker::Name.first_name ,
+#     last_name: Faker::Name.last_name 
+
+# )
+User.create(
+    username: "Wanjiku",
+    email: "maureen@gmail.com",
+    user_type: "student",
+    password_digest: "1234567p",
+    first_name:"Maureen",
+    last_name: "Wanjiku" 
+
 
 )
-end
-
 # posts
 Post.create(
     title: "Easiest way to learn on Javascript!",
