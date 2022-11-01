@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   get '/me', to: 'users#show_me'
   put '/profile/update', to: 'profiles#update_profile'
 
+  patch '/posts/:id/like', to: 'posts#increase_likes'
+  patch '/posts/:id/dislike', to: 'posts#decrease_likes'
+
 end
