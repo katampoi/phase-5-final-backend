@@ -1,4 +1,7 @@
 name: CI
+defaults:
+  run:
+    working-directory: student-motivation-app
 
 on:
   push:
