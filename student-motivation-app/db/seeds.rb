@@ -18,11 +18,22 @@ User.create(
     last_name: "Wanjiku" 
 
 
+<<<<<<< HEAD
+=======
+User.create(
+    username: "davienesh",
+    email: "dav@123.com",
+    password: "dav@123",
+    password_confirmation: "dav@123",
+    first_name: "D",
+    last_name: "N",
+    user_type: "admin"
+>>>>>>> 1e32e8c33a5fe1ee55ea59e57e598fad5d420a13
 )
 # posts
 Post.create(
     title: "Easiest way to learn on Javascript!",
-    media: "https://www.youtube.com/watch?v=NOiT7mZjPXw",
+    media_vid: "https://www.youtube.com/watch?v=NOiT7mZjPXw",
     content:"Introduction to javascript is made easier. Learn this language in less than an hour!",
     user_id:3,
     category_id:3
@@ -30,7 +41,7 @@ Post.create(
 )
 Post.create(
     title: "Steps to setting up a a repository in github",
-    media: "",
+    media_vid: "",
     content:"1. In the upper-right corner of any page, use the  drop-down menu, and select New repository.
     2. Type a short, memorable name for your repository.
     3. Optionally, add a description of your repository.
@@ -42,7 +53,7 @@ Post.create(
 )
 Post.create(
     title: "ruby",
-    media: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/1200px-Ruby_logo.svg.png",
+    media_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/1200px-Ruby_logo.svg.png",
     content:"We'd like to welcome you to our annual code challenge with ruby. Its happengig at the end of the week and all students are encouraged to participate. Invitation details will be posted later in the day. ",
     user_id: 10,
     category_id:1
@@ -51,7 +62,7 @@ Post.create(
 
 Post.create(
     title:"Project Deployment",
-    media: "",
+    media_img: "",
     content:"Software deployment refers to the process of making the application work on a target device, whether it be a test server, production environment or a user's computer or mobile device.
     Software and application deployment are terms that can be used interchangeably.
     Today, most IT organizations and software developers deploy software updates, patches and new applications with a combination of manual and automated processes.
