@@ -22,6 +22,20 @@ User.create(
     last_name: "N",
     user_type: "admin"
 )
+
+# Categories
+Category.create(
+    subscribe: false, 
+    category_name: "DevOPs",
+)
+Category.create(
+    subscribe: true, 
+    category_name:"Fullstack",
+)
+Category.create(
+    subscribe:  true, 
+    category_name:"Front-End",
+)
 # posts
 Post.create(
     title: "Easiest way to learn on Javascript!",
@@ -110,19 +124,7 @@ Review.create(
     comment: "Very helpful content. Thanks!"
 )
 
-# Categories
-Category.create(
-    subscribe: false, 
-    category_name: "DevOPs",
-)
-Category.create(
-    subscribe: true, 
-    category_name:"Fullstack",
-)
-Category.create(
-    subscribe:  true, 
-    category_name:"Front-End",
-)
+
 
 # susbscription
 Subscription.create(
