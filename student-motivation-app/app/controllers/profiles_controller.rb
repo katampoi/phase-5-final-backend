@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-    before_action :authorize
+    #before_action :authorize
     def create
         # @user =current_user
         # profile = @user.profile.create!(profile_params)
