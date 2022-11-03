@@ -139,8 +139,6 @@ GEM
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     pg (1.4.4)
-    postgresql (1.0.0)
-      pg
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -254,7 +252,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jwt (~> 2.5)
-  postgresql
+  pg
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4)
