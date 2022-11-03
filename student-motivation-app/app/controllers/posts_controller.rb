@@ -35,6 +35,21 @@ class PostsController < ApplicationController
         head :no_content
     end
 
+
+     # PATCH: /posts/:id/like
+     def increase_likes
+        post = Post.find(params[:id])
+        post.update!(like: post.like + 1)
+        render json: post, status: :ok
+    end
+
+    # PATCH: /posts/:id/dislike
+    def decrease_likes
+        post = Post.find(params[:id])
+        post.update!(dislike: post.dislike + 1)
+        render json: post, status: :ok
+    end
+
     private
     def post_params
         params.permit(:user_id, :category_id, :title, :media_img, :media_vid, :content)

@@ -22,13 +22,29 @@ User.create(
     last_name: "N",
     user_type: "admin"
 )
+
+# Categories
+Category.create(
+    subscribe: false, 
+    category_name: "DevOPs",
+)
+Category.create(
+    subscribe: true, 
+    category_name:"Fullstack",
+)
+Category.create(
+    subscribe:  true, 
+    category_name:"Front-End",
+)
 # posts
 Post.create(
     title: "Easiest way to learn on Javascript!",
     media_vid: "https://www.youtube.com/watch?v=NOiT7mZjPXw",
     content:"Introduction to javascript is made easier. Learn this language in less than an hour!",
     user_id:3,
-    category_id:3
+    category_id:3,
+    like: 5,
+    dislike: 2
 
 )
 Post.create(
@@ -40,7 +56,9 @@ Post.create(
     4. Select Initialize this repository with a README
     5. Click Create repository.",
     user_id: 7,
-    category_id: 2
+    category_id: 2,
+    like: 3,
+    dislike: 0
     
 )
 Post.create(
@@ -48,7 +66,9 @@ Post.create(
     media_img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/1200px-Ruby_logo.svg.png",
     content:"We'd like to welcome you to our annual code challenge with ruby. Its happengig at the end of the week and all students are encouraged to participate. Invitation details will be posted later in the day. ",
     user_id: 10,
-    category_id:1
+    category_id:1,
+    like: 6,
+    dislike: 3
     
 )
 
@@ -60,7 +80,9 @@ Post.create(
     Today, most IT organizations and software developers deploy software updates, patches and new applications with a combination of manual and automated processes.
     Software developers have created workflows that enable faster and more frequent deployment of software updates to the production environment where they can be accessed by users.",
     user_id: 9,
-    category_id: 2
+    category_id: 2,
+    like: 1,
+    dislike: 0
     
 )
 
@@ -110,19 +132,7 @@ Review.create(
     comment: "Very helpful content. Thanks!"
 )
 
-# Categories
-Category.create(
-    subscribe: false, 
-    category_name: "DevOPs",
-)
-Category.create(
-    subscribe: true, 
-    category_name:"Fullstack",
-)
-Category.create(
-    subscribe:  true, 
-    category_name:"Front-End",
-)
+
 
 # susbscription
 Subscription.create(

@@ -3,8 +3,8 @@ class CreateReviews < ActiveRecord::Migration[7.0]
     create_table :reviews do |t|
       t.integer :user_id
       t.integer :post_id
-      t.integer :like
-      t.integer :dislike
+      t.integer :like, default: 0
+      t.integer :dislike, default: 0
       t.string :comment
 
       t.timestamps
