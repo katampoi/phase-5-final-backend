@@ -59,7 +59,6 @@ RSpec.describe "Profiles", type: :request do
 
       it "returns an array of error messages in the body" do
         get "/profiles"
-        puts response.body
         expect(response.body).to include_json({
           errors: a_kind_of(Array)
         })
