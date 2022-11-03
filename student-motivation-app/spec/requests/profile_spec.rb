@@ -22,12 +22,12 @@ RSpec.describe "Profiles", type: :request do
     end
      context "with a logged in user" do
       before do
-        post "/login", params: { username: user.username, password: user.password }
+        post "/login", params: { username: user1.username, password: user1.password }
       end
       
       it "returns an array of profiles with their associated users" do
         get "/profiles"
-
+        puts response.body
         expect(response.body).to include_json([
           {
             id: a_kind_of(Integer),
@@ -35,8 +35,8 @@ RSpec.describe "Profiles", type: :request do
             instructions: "Measure 1 cup of rice in bowl of rice cooker. Wash rice. Fill with water to level indicated by manufacturer. Put bowl in rice cooker. Press 'Cook'. Enjoy!",
             minutes_to_complete: 10,
             user: {
-              username: user.username,
-              image_url: user.image_url,
+              username: user1.username,
+             profile_pic: user1.profile_pic,
               bio: user.bio
             }
           },
@@ -46,8 +46,8 @@ RSpec.describe "Profiles", type: :request do
             instructions: "Measure 1 cup of rice in bowl of rice cooker. Don't add any water. Put bowl in rice cooker. Press 'Cook'. Enjoy!",
             minutes_to_complete: 10,
             user: {
-              username: user.username,
-              image_url: user.image_url,
+              username: user2.username,
+             profile_pic: user2.profile_pic,
               bio: user.bio
             }
           }
@@ -59,7 +59,7 @@ RSpec.describe "Profiles", type: :request do
 
       it "returns an array of error messages in the body" do
         get "/profiles"
-
+        puts response.body
         expect(response.body).to include_json({
           errors: a_kind_of(Array)
         })
@@ -70,10 +70,11 @@ RSpec.describe "Profiles", type: :request do
 
         expect(response).to have_http_status(:unauthorized)
       end
+    end
       
       context "with a logged in user" do
         before do
-          post "/login", params: { username: user.username, password: user.password }
+          post "/login", params: { username: user1.username, password: user1.password }
         end
         
         it "returns an array of profiles with their associated users" do
@@ -87,7 +88,7 @@ RSpec.describe "Profiles", type: :request do
               minutes_to_complete: 10,
               user: {
                 username: user.username,
-                image_url: user.image_url,
+                profile_pic: user.profile_pic,
                 bio: user.bio
               }
             },
@@ -98,7 +99,7 @@ RSpec.describe "Profiles", type: :request do
               minutes_to_complete: 10,
               user: {
                 username: user.username,
-                image_url: user.image_url,
+                profile_pic: user.profile_pic,
                 bio: user.bio
               }
             }
@@ -109,7 +110,7 @@ RSpec.describe "Profiles", type: :request do
       context "with no logged in user" do
   
         it "returns an array of error messages in the body" do
-          get "/profiles"
+          get "/profiles/:id"
   
           expect(response.body).to include_json({
             errors: a_kind_of(Array)
@@ -117,11 +118,11 @@ RSpec.describe "Profiles", type: :request do
         end
   
         it "returns a 401 (Unauthorized) HTTP status code" do
-          get "/profiles"
+          get "/profiles/:id"
   
           expect(response).to have_http_status(:unauthorized)
         end
         
       end
-    end
-
+  end
+end
