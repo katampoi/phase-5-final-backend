@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   put '/profile/update', to: 'profiles#update_profile'
   post '/signup', to: 'users#create'
 
+  patch '/posts/:id/like', to: 'posts#increase_likes'
+  patch '/posts/:id/dislike', to: 'posts#decrease_likes'
+
 end
