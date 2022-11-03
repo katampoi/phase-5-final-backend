@@ -20,40 +20,40 @@ RSpec.describe "Profiles", type: :request do
         }
       ])
     end
-     context "with a logged in user" do
-      before do
-        post "/login", params: { username: user1.username, password: user1.password }
-      end
+    #  context "with a logged in user" do
+    #   before do
+    #     post "/login", params: { username: user1.username, password: user1.password }
+    #   end
       
-      it "returns an array of profiles with their associated users" do
-        get "/profiles"
-        puts response.body
-        expect(response.body).to include_json([
-          {
-            id: a_kind_of(Integer),
-            title: "Rice", 
-            instructions: "Measure 1 cup of rice in bowl of rice cooker. Wash rice. Fill with water to level indicated by manufacturer. Put bowl in rice cooker. Press 'Cook'. Enjoy!",
-            minutes_to_complete: 10,
-            user: {
-              username: user1.username,
-             profile_pic: user1.profile_pic,
-              bio: user.bio
-            }
-          },
-          {
-            id: a_kind_of(Integer),
-            title: "Burnt Rice", 
-            instructions: "Measure 1 cup of rice in bowl of rice cooker. Don't add any water. Put bowl in rice cooker. Press 'Cook'. Enjoy!",
-            minutes_to_complete: 10,
-            user: {
-              username: user2.username,
-             profile_pic: user2.profile_pic,
-              bio: user.bio
-            }
-          }
-        ])
-      end
-    end
+    #   it "returns an array of profiles with their associated users" do
+    #     get "/profiles"
+    #     puts response.body
+    #     expect(response.body).to include_json([
+    #       {
+    #         id: a_kind_of(Integer),
+    #         title: "Rice", 
+    #         instructions: "Measure 1 cup of rice in bowl of rice cooker. Wash rice. Fill with water to level indicated by manufacturer. Put bowl in rice cooker. Press 'Cook'. Enjoy!",
+    #         minutes_to_complete: 10,
+    #         user: {
+    #           username: user1.username,
+    #          profile_pic: user1.profile_pic,
+    #           bio: user.bio
+    #         }
+    #       },
+    #       {
+    #         id: a_kind_of(Integer),
+    #         title: "Burnt Rice", 
+    #         instructions: "Measure 1 cup of rice in bowl of rice cooker. Don't add any water. Put bowl in rice cooker. Press 'Cook'. Enjoy!",
+    #         minutes_to_complete: 10,
+    #         user: {
+    #           username: user2.username,
+    #          profile_pic: user2.profile_pic,
+    #           bio: user.bio
+    #         }
+    #       }
+    #     ])
+    #   end
+    # end
 
     context "with no logged in user" do
 
@@ -71,40 +71,40 @@ RSpec.describe "Profiles", type: :request do
       end
     end
       
-      context "with a logged in user" do
-        before do
-          post "/login", params: { username: user1.username, password: user1.password }
-        end
+      # context "with a logged in user" do
+      #   before do
+      #     post "/login", params: { username: user1.username, password: user1.password }
+      #   end
         
-        it "returns an array of profiles with their associated users" do
-          get "/profiles/:id"
+      #   it "returns an array of profiles with their associated users" do
+      #     get "/profiles/:id"
   
-          expect(response.body).to include_json([
-            {
-              id: a_kind_of(Integer),
-              title: "Rice", 
-              instructions: "Measure 1 cup of rice in bowl of rice cooker. Wash rice. Fill with water to level indicated by manufacturer. Put bowl in rice cooker. Press 'Cook'. Enjoy!",
-              minutes_to_complete: 10,
-              user: {
-                username: user.username,
-                profile_pic: user.profile_pic,
-                bio: user.bio
-              }
-            },
-            {
-              id: a_kind_of(Integer),
-              title: "Burnt Rice", 
-              instructions: "Measure 1 cup of rice in bowl of rice cooker. Don't add any water. Put bowl in rice cooker. Press 'Cook'. Enjoy!",
-              minutes_to_complete: 10,
-              user: {
-                username: user.username,
-                profile_pic: user.profile_pic,
-                bio: user.bio
-              }
-            }
-          ])
-        end
-      end
+      #     expect(response.body).to include_json([
+      #       {
+      #         id: a_kind_of(Integer),
+      #         title: "Rice", 
+      #         instructions: "Measure 1 cup of rice in bowl of rice cooker. Wash rice. Fill with water to level indicated by manufacturer. Put bowl in rice cooker. Press 'Cook'. Enjoy!",
+      #         minutes_to_complete: 10,
+      #         user: {
+      #           username: user.username,
+      #           profile_pic: user.profile_pic,
+      #           bio: user.bio
+      #         }
+      #       },
+      #       {
+      #         id: a_kind_of(Integer),
+      #         title: "Burnt Rice", 
+      #         instructions: "Measure 1 cup of rice in bowl of rice cooker. Don't add any water. Put bowl in rice cooker. Press 'Cook'. Enjoy!",
+      #         minutes_to_complete: 10,
+      #         user: {
+      #           username: user.username,
+      #           profile_pic: user.profile_pic,
+      #           bio: user.bio
+      #         }
+      #       }
+      #     ])
+      #   end
+      # end
   
       context "with no logged in user" do
   
