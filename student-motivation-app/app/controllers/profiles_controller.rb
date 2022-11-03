@@ -1,5 +1,8 @@
 class ProfilesController < ApplicationController
     before_action :authorize
+    def index
+        render json: Profile.all, status: :ok
+    end
     def create
         # @user =current_user
         # profile = @user.profile.create!(profile_params)

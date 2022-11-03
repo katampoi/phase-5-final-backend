@@ -19,6 +19,7 @@ RSpec.describe User, type: :model do
 
   it 'is valid if password and password_confirmation match' do
     user = User.new
+    user.username ='Brejin'
     user.password = 'brejin'
     user.password_confirmation = 'brejin'
     expect(user.valid?).to be(true)
@@ -26,6 +27,7 @@ RSpec.describe User, type: :model do
 
   it 'is valid if password is set and password_confirmation is nil' do
      user = User.new
+     user.username = 'Matata'
      user.password = 'matata'
      expect(user.valid?).to be(true)
   end
